@@ -21,68 +21,129 @@ Select ONE Additional Feature to Add
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <h1>Quiz About [Me]</h1>
+    <h1>OLYMPICS QUIZ</h1>
     <hr />
-    <!-- Movie Question -->
-    <form id="movie-form">
+
+    <!-- Year Question -->
+    <form id="year-form">
       <label>
-        🎥 What is my favorite movie?
-        <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+        In what year did the first modern Olympics take place?
+        <select id="year-answer">
+          <option value="year1">1804</option>
+          <option value="year2">1896</option>
+          <option value="year3">1952</option>
+          <option value="year4">1972</option>
         </select>
       </label>
-      <button type="submit">Check Movie Answer</button>
+      <button type="submit">Check Year Answer</button>
     </form>
-    <div id="movie-result"></div>
+    <div id="year-result">
+      <p id="year-text"></p>
+      <img
+        id="year-img"
+        src="https://www.greekislandyachtholiday.com/wp-content/uploads/2020/04/5328-athens-1896-1-638.jpg"
+        width="100"
+        style="display: none"
+      />
+    </div>
     <hr />
-    <!-- Book Question -->
-    <form id="book-form">
+
+    <!-- Women Question -->
+    <form id="women-form">
       <label>
-        📖 What is my favorite book?
-        <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+        In what year did women first compete in the Olympics?
+        <select id="women-answer">
+          <option value="women1">1936</option>
+          <option value="women2">1984</option>
+          <option value="women3">1900</option>
+          <option value="women4">1960</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
     </form>
-    <div id="book-result"></div>
+    <div id="women-result">
+      <p id="women-text"></p>
+      <img
+        id="women-img"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZnQc9kGoJ8CFB4pPvJnkC9N-1MsDgCS89dg&s"
+        width="100"
+        style="display: none"
+      />
+    </div>
+    <hr />
+
+    <!-- Sport Question -->
+    <form id="sport-form">
+      <label>
+        In which Olympic sport can athletes win the most medals?
+        <select id="sport-answer">
+          <option value="sport1">Swimming</option>
+          <option value="sport2">Skiing</option>
+          <option value="sport3">Gymnastics</option>
+          <option value="sport4">Track and Field</option>
+        </select>
+      </label>
+      <button type="submit">Check Year Answer</button>
+    </form>
+    <div id="sport-result">
+      <p id="sport-text"></p>
+      <img
+        id="sport-img"
+        src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6943x4629+0+0/resize/6943x4629!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Fbe%2F8d%2Fb4501e2f4b749564802ba0a440ed%2Fap24214373174677.jpg"
+        width="100"
+        style="display: none"
+      />
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      //Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      // Year Question
+      $("#year-form").on("submit", function (event) {
         event.preventDefault();
+        var answer = $("#year-answer").val();
 
-        var $answer = $("#movie-answer");
-        var answer = $answer.val();
-
-        if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
+        if (answer === "year2") {
+          $("#year-text").text("That answer is Golden!");
+          $("#year-img").show();
         } else {
-          $("#movie-result").text("Try Again!");
+          $("#year-text").text(
+            "Sorry...but that answer doesn't make the podium."
+          );
+          $("#year-img").hide();
         }
       });
 
-      //Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      // Women Question
+      $("#women-form").on("submit", function (event) {
         event.preventDefault();
+        var answer = $("#women-answer").val();
 
-        var $answer = $("#book-answer");
-        var answer = $answer.val();
-
-        if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
+        if (answer === "women3") {
+          $("#women-text").text("That's the answer of a Champion!");
+          $("#women-img").show();
         } else {
-          $("#book-result").text("Try Again!");
+          $("#women-text").text(
+            "You have some catching up to do to reach the correct answer."
+          );
+          $("#women-img").hide();
+        }
+      });
+
+      // Sport Question
+      $("#sport-form").on("submit", function (event) {
+        event.preventDefault();
+        var answer = $("#sport-answer").val();
+
+        if (answer === "sport1") {
+          $("#sport-text").text(
+            "This answer is at the top of the medal count!!"
+          );
+          $("#sport-img").slideDown();
+        } else {
+          $("#sport-text").text("Nope, but that sport is a fan favorite!");
+          $("#sport-img").hide();
         }
       });
     </script>
   </body>
-
-  <!--- Taken From Khan Academy HTML/JS: Making webpages interactive with jQuery-->
 </html>

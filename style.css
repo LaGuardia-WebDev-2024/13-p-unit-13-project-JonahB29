@@ -1,5 +1,11 @@
-#movie-result {
-  background: rgb(244, 98, 181);
+body {
+  background-image: url("https://media.self.com/photos/6659efa72e2794fa6f47f803/4:3/w_2560%2Cc_limit/GettyImages-846563176.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#year-result {
+  background: rgb(0, 226, 253);
   border: 5px solid black;
   font-size: 24px;
   height: 160px;
@@ -7,16 +13,29 @@
   margin-bottom: 20px;
 }
 
-#book-result {
-  background: rgb(196, 159, 255);
+#women-result {
+  background: rgb(255, 3, 3);
   border: 5px solid black;
   font-size: 24px;
   height: 160px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
-
+#sport-result {
+  background: rgb(253, 253, 0);
+  border: 5px solid black;
+  font-size: 24px;
+  height: 160px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
 hr {
   height: 5px;
-  background-color: black;
+  background-color: rgb(104, 242, 87);
+}
+h1 {
+  color: rgb(255, 255, 255);
+}
+label {
+  color: rgb(255, 255, 255);
 }
